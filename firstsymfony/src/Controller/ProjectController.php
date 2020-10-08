@@ -26,8 +26,11 @@ class ProjectController extends AbstractController
      */
     public function index(ProjectRepository $projectRepository): Response
     {
+        $projects = $projectRepository->findAll();
+        $teamsByProjects = [["T1"], ["T1", "T2"]];
         return $this->render('project/index.html.twig', [
-            'projects' => $projectRepository->findAll(),
+            'projects' => $projects,
+            'teamsByProjects' => $teamsByProjects,
             'isATeam' => false
         ]);
     }
