@@ -35,7 +35,13 @@
                         <td>
                             {% if team.user|length > 0 %}
                                 {% for user in team.user %}
-                                    <span class="user">{{ user.firstName }} {{ user.lastName }}</span>
+                                    {% if loop.index0 < 3 %}
+                                        <span class="user">{{ user.firstName }} {{ user.lastName }}</span>
+                                    {% else %}
+                                        {% if loop.index0 == 3 %}
+                                        <span class="user"> ... </span>
+                                        {% endif %}
+                                    {% endif %}
                                 {% endfor %}
                             {% else %}
                                 <span>Aucun utilisateur associé !</span>
