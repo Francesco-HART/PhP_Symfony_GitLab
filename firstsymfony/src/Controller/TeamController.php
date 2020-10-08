@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Team;
 use App\Form\TeamType;
-use App\Form\AddPojectType;
+use App\Form\AddProjectType;
 use App\Repository\TeamRepository;
 use phpDocumentor\Reflection\Types\Integer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -98,7 +98,7 @@ class TeamController extends AbstractController
      */
     public function addProject(Request $request,Team $team)
     {
-        $form = $this->createForm(AddPojectType::class, $team);
+        $form = $this->createForm(AddProjectType::class, $team);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
