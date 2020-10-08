@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}¤ First Symfony ~ Editer un projets ¤{% endblock %}
+
+{% block body %}
+    {{ include('header/header.html.twig') }}
+    <h1>Editer un projet</h1>
+
+    {{ include('project/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('project_index') }}">Retour</a>
+
+    {{ include('project/_delete_form.html.twig') }}
+    {{ include('footer/footer.html.twig') }}
+{% endblock %}

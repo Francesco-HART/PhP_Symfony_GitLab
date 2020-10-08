@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}¤ First Symfony ~ Team ¤{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .user {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            margin: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    {{ include('header/header.html.twig') }}
+
+    <table class="table">
+        <thead>
+            <tr>
+                {#<th>Id</th>#}
+                <th>Name</th>
+                <th>Users</th>
+                <th>Actions</th>
+                {#<th>Projets</th>#}
+            </tr>
+        </thead>
+        <tbody>
+            {% for team in teams %}
+                {% if team %}
+                    <tr>
+                        {#<td>{{ team.id }}</td>#}
+                        <td>{{ team.name }}</td>
+                        <td>
+                            {% if team.user|length > 0 %}
+                                {% for user in team.user %}
+                                    <span class="user">{{ user.firstName }} {{ user.lastName }}</span>
+                                {% endfor %}
+                            {% else %}
+                                <span>Aucun utilisateur associé !</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{{ path('team_show', {'id': team.id}) }}">Voir</a>
+                        </td>
+                        <td>
+                            <a href="{{ path('team_edit', {'id': team.id}) }}">Editer</a>
+                        </td>
+                        <td>
+                            <a href="{{ path('team_addProject', {'id': team.id}) }}">Ajouter un project</a>
+                        </td>
+                        <td>
+                            <a href="{{ path('showProjectsByTeam', {'id': team.id}) }}">Voir les project</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3">No projects found !</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('team_new') }}">Créer une team</a>
+    {{ include('footer/footer.html.twig') }}
+{% endblock %}

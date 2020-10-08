@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}¤ First Symfony ~ Créer un projets ¤{% endblock %}
+
+{% block body %}
+    {{ include('header/header.html.twig') }}
+    <h1>Créer un projet</h1>
+
+    {{ include('project/_form.html.twig') }}
+
+    <a href="{{ path('project_index') }}">Retour</a>
+    {{ include('footer/footer.html.twig') }}
+{% endblock %}

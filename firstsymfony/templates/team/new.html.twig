@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}¤ First Symfony ~ Créer une team ¤{% endblock %}
+
+{% block body %}
+    {{ include('header/header.html.twig') }}
+    <h1>Créer une nouvelle team</h1>
+
+    {{ include('team/_form.html.twig') }}
+
+    <a href="{{ path('team_index') }}">Retour</a>
+    {{ include('footer/footer.html.twig') }}
+{% endblock %}
