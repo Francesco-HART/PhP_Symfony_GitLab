@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link href="{{ asset('assets/css/header.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/footer.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/about.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/login.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

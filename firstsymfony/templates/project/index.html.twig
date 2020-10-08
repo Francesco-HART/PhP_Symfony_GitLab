@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}¤ First Symfony ~ Projets ¤{% endblock %}
+
+{% block body %}
+    {{ include('header/header.html.twig') }}
+
+    <table class="table">
+        <thead>
+        <tr>
+            {# <th>Id</th> #}
+            {# <th>GitlabId</th> #}
+            <th>Nom</th>
+            {# <th>Actions</th> #}
+            <th>Date de création</th>
+            <th>Merge Requests</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for project in projects %}
+            <tr>
+                {# <td>{{ project.id }}</td> #}
+                {# <td>{{ project.gitlabId }}</td> #}
+                <td>{{ project.name }}</td>
+                <td>{{ project.createdAt ? project.createdAt|date('d / m / Y à H:i') : '' }}</td>
+                {# <td> #}
+                {# <a href="{{ path('project_show', {'id': project.id}) }}">show</a> #}
+                {# <a href="{{ path('project_edit', {'id': project.id}) }}">edit</a> #}
+                {# </td> #}
+                <td>
+                    <a href="{{ path('merge_requests_show', {'id': project.gitlabId}) }}">Voir</a>
+                </td>
+                <td>{{ project.description }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucun projet trouvé !</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% if isATeam == false %}
+        <a href="{{ path('project_new') }}">Créer un projet</a>
+        <a href="{{ path('project_load') }}">Actualiser depuis GitLab</a>
+    {% endif %}
+    {{ include('footer/footer.html.twig') }}
+{% endblock %}

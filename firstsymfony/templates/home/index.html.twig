@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}¤ First Symfony ¤{% endblock %}
+
+{% block body %}
+    {{ include('header/header.html.twig') }}
+    <br />
+    <p style="font-size: 50px;">Gérer vos projets GitLab</p>
+    <p style="font-size: 50px;">et vos Merge Requests</p>
+    <p style="font-size: 50px;">efficacement avec</p>
+    <img  style="height: 200px; width: auto;" alt="logo" src="{{ asset('assets/logo.png') }}" class="logo">
+    {{ include('footer/footer.html.twig') }}
+{% endblock %}

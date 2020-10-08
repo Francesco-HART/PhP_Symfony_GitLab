@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}¤ First Symfony ~ Ajouter un projet à votre team ¤{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un projet à votre team</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('team_index') }}">Retour</a>
+{% endblock %}

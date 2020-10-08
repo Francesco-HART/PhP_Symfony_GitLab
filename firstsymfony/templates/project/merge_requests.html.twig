@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <style>
+        .tag {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            margin: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+{% endblock %}
+
+{% block title %}Merge Requests{% endblock %}
+
+{% block body %}
+    {{ include('header/header.html.twig') }}
+
+    {% if mergeRequests|length == 0 %}
+        <img alt="img-no-merge"  src="{{ asset('assets/Pictures/no-merge.png') }}" />
+        <p>Aucune merge request trouvée !</p>
+    {% else %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>✅</th>
+                <th>❌</th>
+                <th>Tags</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for merge in mergeRequests %}
+                <tr>
+                    <td><img src="{{ merge['author']['avatar_url'] }}" alt='avatar' style="width: 50px; height: 50px; border-radius: 50%"/></td>
+                    <td>{{ merge['title'] }}</td>
+                    <td>{{ merge['description'] }}</td>
+                    <td>{{ merge['upvotes'] }}</td>
+                    <td>{{ merge['downvotes'] }}</td>
+                    <td>
+                        {% for tag in  merge['labels'] %}
+                            <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    {{ include('footer/footer.html.twig') }}
+{% endblock %}
+
