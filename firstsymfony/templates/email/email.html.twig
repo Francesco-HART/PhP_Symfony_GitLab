@@ -1,6 +1,7 @@
-<h3>You did it! You registered!</h3>
+<h3>On vous attend</h3>
 
-Hi blyat ! You're successfully !
-'our mail
-
-Thanks!
+{% for merge in merges %}
+    <p>Vous avez le projet : {{ merge.title }} en attente</p>
+{% endfor %}
+<p>Merci de travailler vite !</p>
+<p>Thanks!</p>

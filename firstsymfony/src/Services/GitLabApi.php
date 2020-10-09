@@ -65,4 +65,25 @@ class GitLabApi
             return [];
         }
     }
+    public function fetchMR(){
+        try {
+            $response = $this->client->request(
+                "GET",
+                $this->urlGitLab . "merge_requests?owned=true&state=opened&private_token=" .
+                $this->tokenGitLab
+            );
+            return $response->toArray();
+        }
+        catch (TransportExceptionInterface $e) {
+            return [];
+        } catch (ClientExceptionInterface $e) {
+            return [];
+        } catch (DecodingExceptionInterface $e) {
+            return [];
+        } catch (RedirectionExceptionInterface $e) {
+            return [];
+        } catch (ServerExceptionInterface $e) {
+            return [];
+        }
+    }
 }

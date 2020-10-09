@@ -15,6 +15,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("/team")
+ * @IsGranted("ROLE_ADMIN")
  */
 class TeamController extends AbstractController
 {
