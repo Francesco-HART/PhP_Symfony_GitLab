@@ -14,12 +14,18 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Ajouter un projet à votre team</h1>
-    <span>Vous pouvez sélectionner plusieurs projects en maintenant la touche [Ctrl] !</span>
+
+    {{ include('header/header.html.twig') }}
+<div class="form-center" style="  text-align: center;">
+    <h1 style="margin-top: 5px">Ajouter un projet à votre team</h1>
+    <p>Vous pouvez sélectionner plusieurs projects en maintenant la touche [Ctrl] !</p>
     {{ form_start(form) }}
+<div class="form_center">
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Sauvegarder') }}</button>
+    <button class="btn btn-lg btn-primary form-control">{{ button_label|default('Sauvegarder') }}</button>
+</div>
     {{ form_end(form) }}
+
 
     <div class="selectedProject">
         <span>Project séléctionnés : </span>
@@ -31,4 +37,6 @@
     </div>
 
     <a href="{{ path('team_index') }}">Retour</a>
+</div>
+    {{ include('footer/footer.html.twig') }}
 {% endblock %}
