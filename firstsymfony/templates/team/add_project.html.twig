@@ -2,7 +2,19 @@
 
 {% block title %}¤ First Symfony ~ Ajouter un projet à votre team ¤{% endblock %}
 
+{% block stylesheets %}
+    <style>
+        .project {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            margin: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+{% endblock %}
+
 {% block body %}
+
     {{ include('header/header.html.twig') }}
 <div class="form-center" style="  text-align: center;">
     <h1 style="margin-top: 5px">Ajouter un projet à votre team</h1>
@@ -13,6 +25,17 @@
     <button class="btn btn-lg btn-primary form-control">{{ button_label|default('Sauvegarder') }}</button>
 </div>
     {{ form_end(form) }}
+
+
+    <div class="selectedProject">
+        <span>Project séléctionnés : </span>
+        {% for project in projects %}
+            <span class="project">{{ project.name }}</span>
+        {% else %}
+            <span>Aucun projet associé !</span>
+        {% endfor %}
+    </div>
+
     <a href="{{ path('team_index') }}">Retour</a>
 </div>
     {{ include('footer/footer.html.twig') }}
