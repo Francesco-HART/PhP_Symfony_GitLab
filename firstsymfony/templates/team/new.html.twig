@@ -4,10 +4,12 @@
 
 {% block body %}
     {{ include('header/header.html.twig') }}
-    <h1>Créer une nouvelle team</h1>
+    <div class="form-center" style="  text-align: center;">
+        <h1 style="text-align: center; margin-top: 5px">Créer une nouvelle team</h1>
+        <img alt="logo" src="{{ asset('assets/teams.png') }}" class="teamsPicture">
+        {{ include('team/_form.html.twig') }}
+        <a href="{{ path('team_index') }}">Retour</a>
+    </div>
 
-    {{ include('team/_form.html.twig') }}
-
-    <a href="{{ path('team_index') }}">Retour</a>
     {{ include('footer/footer.html.twig') }}
 {% endblock %}
