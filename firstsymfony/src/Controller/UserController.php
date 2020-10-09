@@ -44,7 +44,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
+     * @Route("/{id}/{isEditingTeam}/{editedTeamId}/edit", name="user_edit", methods={"GET","POST"})
      * @param Request $request
      * @param User $user
      * @return Response
@@ -52,18 +52,26 @@ class UserController extends AbstractController
      */
     public function edit(Request $request, User $user): Response
     {
-        $form = $this->createForm(UserType::class, $user);
+        $isEditingTeam = $request->get('isEditingTeam');
+        $editedTeamId = $request->get('editedTeamId');
+
+        $form = $this->createForm(UserType::class, $user, ['isEditingTeam' => $isEditingTeam]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('user_index');
+            if ($isEditingTeam == "true") {
+                return $this->redirectToRoute('team_edit', ['id' => $editedTeamId]);
+            }
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('user/edit.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
+            'isEditingTeam' => $isEditingTeam,
+            'editedTeamId' => $editedTeamId
         ]);
     }
 

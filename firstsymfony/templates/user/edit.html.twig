@@ -7,8 +7,12 @@
 
     {{ include('user/_form.html.twig', {'button_label': 'Mettre à jour  '}) }}
 
-    <a href="{{ path('user_index') }}">Retour</a>
+    {% if isEditingTeam == "true" %}
+        <a href="{{ path('team_edit', {'id': editedTeamId}) }}">Retour</a>
+    {% else %}
+        <a href="{{ path('home') }}">Retour</a>
+        {{ include('user/_delete_form.html.twig') }}
+    {% endif %}
 
-    {{ include('user/_delete_form.html.twig') }}
     {{ include('footer/footer.html.twig') }}
 {% endblock %}

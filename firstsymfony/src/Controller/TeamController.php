@@ -109,8 +109,10 @@ class TeamController extends AbstractController
 
             return $this->redirectToRoute('team_index');
         }
+//        dd($team->getProject());
         return $this->render('team/add_project.html.twig', [
             'team' => $team,
+            'projects' => $team->getProject(),
             'form' => $form->createView(),
         ]);
     }

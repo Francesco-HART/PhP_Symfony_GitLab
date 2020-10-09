@@ -19,6 +19,7 @@ class AddProjectType extends AbstractType
                 'choice_label' => 'name',
                 'multiple' => true,
                 'required' => true,
+                'attr' => ['class' => 'form-control'],
             ])
         ;
     }

@@ -35,17 +35,12 @@
                 {# <td>{{ project.id }}</td> #}
                 {# <td>{{ project.gitlabId }}</td> #}
                 <td>{{ project.name }}</td>
-                <td><span class="team">{{ loop.index0 }}</span></td>
-{#                <td>#}
-{#                    {% for team in teamsByProjects[loop.index0] %}#}
-{#                        <span class="team">{{ team }}</span>#}
-{#                    {% endfor %}#}
-{#                </td>#}
+                <td>
+                    {% for team in project.teams %}
+                        <span class="team">{{ team.name }}</span>
+                    {% endfor %}
+                </td>
                 <td>{{ project.createdAt ? project.createdAt|date('d / m / Y à H:i') : '' }}</td>
-                {# <td> #}
-                {# <a href="{{ path('project_show', {'id': project.id}) }}">show</a> #}
-                {# <a href="{{ path('project_edit', {'id': project.id}) }}">edit</a> #}
-                {# </td> #}
                 <td>
                     <a href="{{ path('merge_requests_show', {'id': project.gitlabId}) }}">Voir</a>
                 </td>
