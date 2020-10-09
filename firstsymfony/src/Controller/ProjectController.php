@@ -13,9 +13,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("/project")
+ * @IsGranted("ROLE_USER")
  */
 class ProjectController extends AbstractController
 {
@@ -74,6 +76,7 @@ class ProjectController extends AbstractController
      * @param Request $request
      * @param Project $project
      * @return Response
+     * @IsGranted("ROLE_ADMIN")
      */
     public function edit(Request $request, Project $project): Response
     {
@@ -97,6 +100,7 @@ class ProjectController extends AbstractController
      * @param Request $request
      * @param Project $project
      * @return Response
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(Request $request, Project $project): Response
     {
@@ -169,7 +173,6 @@ class ProjectController extends AbstractController
         return $this->render('project/merge_requests.html.twig', [
             'mergeRequests' => $mergeRequests,
         ]);
-
     }
 
     /**
@@ -184,6 +187,4 @@ class ProjectController extends AbstractController
             'isATeam' => true
         ]);
     }
-
-
 }

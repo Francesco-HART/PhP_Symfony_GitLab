@@ -9,7 +9,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class AddPojectType extends AbstractType
+class AddProjectType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -19,6 +19,7 @@ class AddPojectType extends AbstractType
                 'choice_label' => 'name',
                 'multiple' => true,
                 'required' => true,
+                'attr' => ['class' => 'form-control'],
             ])
         ;
     }

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}¤ First Symfony ~ Editer un utilisateur ¤{% endblock %}
+
+{% block body %}
+    {{ include('header/header.html.twig') }}
+
+    {{ include('user/_form.html.twig', {'button_label': 'Mettre à jour  '}) }}
+
+    {% if isEditingTeam == "true" %}
+        <a href="{{ path('team_edit', {'id': editedTeamId}) }}">Retour</a>
+    {% else %}
+        <a href="{{ path('home') }}">Retour</a>
+        {{ include('user/_delete_form.html.twig') }}
+    {% endif %}
+
+    {{ include('footer/footer.html.twig') }}
+{% endblock %}

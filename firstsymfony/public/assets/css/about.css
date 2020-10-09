@@ -3,11 +3,20 @@
     --shadow-color-light: white;
 }
 
+.teamsPicture{
+    width: 245px;
+}
+.sunset{
+    font-family: SunsetBoulevard;
+    src: url("../SunsetBoulevard.otf");
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 
 p {
     margin: calc(50vh - 40px) auto 0 auto;

@@ -35,7 +35,13 @@
                         <td>
                             {% if team.user|length > 0 %}
                                 {% for user in team.user %}
-                                    <span class="user">{{ user.firstName }} {{ user.lastName }}</span>
+                                    {% if loop.index0 < 3 %}
+                                        <span class="user">{{ user.firstName }} {{ user.lastName }}</span>
+                                    {% else %}
+                                        {% if loop.index0 == 3 %}
+                                        <span class="user"> ... </span>
+                                        {% endif %}
+                                    {% endif %}
                                 {% endfor %}
                             {% else %}
                                 <span>Aucun utilisateur associé !</span>
@@ -48,7 +54,7 @@
                             <a href="{{ path('team_edit', {'id': team.id}) }}">Editer</a>
                         </td>
                         <td>
-                            <a href="{{ path('team_addProject', {'id': team.id}) }}">Ajouter un project</a>
+                            <a href="{{ path('team_addProject', {'id': team.id}) }}">Gérer les projets</a>
                         </td>
                         <td>
                             <a href="{{ path('showProjectsByTeam', {'id': team.id}) }}">Voir les project</a>

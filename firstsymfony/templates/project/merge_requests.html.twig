@@ -17,8 +17,10 @@
     {{ include('header/header.html.twig') }}
 
     {% if mergeRequests|length == 0 %}
-        <img alt="img-no-merge"  src="{{ asset('assets/Pictures/no-merge.png') }}" />
-        <p>Aucune merge request trouvée !</p>
+        <div style="text-align: center">
+            <img alt="img-no-merge"  src="{{ asset('assets/Pictures/no-merge.png') }}"/>
+            <p>Aucune merge request trouvée !</p>
+        </div>
     {% else %}
         <table class="table">
             <thead>

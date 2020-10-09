@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9078d14-3ecd-4456-b8a7-190238fd022a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/firstsymfony/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/firstsymfony/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstsymfony/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/firstsymfony/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstsymfony/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/firstsymfony/src/Form/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstsymfony/templates/header/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/firstsymfony/templates/header/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstsymfony/templates/team/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/firstsymfony/templates/team/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstsymfony/templates/user/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/firstsymfony/templates/user/edit.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,19 +148,30 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1ibllimSy9i9Dys7p0sJQGtQvfT" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/firstsymfony/src/Entity" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Roman\Programmation\PhP\PhP_Symfony_GitLab\firstsymfony\src\Entity" />
+      <recent name="C:\Roman\Programmation\PhP\PhP_Symfony_GitLab\firstsymfony\src\Repository" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -167,10 +183,25 @@
       <updated>1602184328473</updated>
       <workItem from="1602184329867" duration="435000" />
       <workItem from="1602184884750" duration="346000" />
+      <workItem from="1602186073482" duration="237000" />
+      <workItem from="1602188056504" duration="12127000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="457" y="40" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602193195146">
+      <screen x="0" y="40" width="1600" height="860" />
+    </state>
+    <state x="457" y="40" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.40.1600.860@0.40.1600.860" timestamp="1602193195146" />
+    <state x="301" y="114" key="SettingsEditor" timestamp="1602190956276">
+      <screen x="0" y="40" width="1600" height="860" />
+    </state>
+    <state x="301" y="114" key="SettingsEditor/0.40.1600.860@0.40.1600.860" timestamp="1602190956276" />
   </component>
 </project>
