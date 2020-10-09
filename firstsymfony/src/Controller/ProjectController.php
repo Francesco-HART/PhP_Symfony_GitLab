@@ -169,7 +169,6 @@ class ProjectController extends AbstractController
         return $this->render('project/merge_requests.html.twig', [
             'mergeRequests' => $mergeRequests,
         ]);
-
     }
 
     /**
@@ -184,6 +183,4 @@ class ProjectController extends AbstractController
             'isATeam' => true
         ]);
     }
-
-
 }

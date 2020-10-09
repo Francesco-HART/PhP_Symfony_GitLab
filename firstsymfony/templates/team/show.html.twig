@@ -17,6 +17,18 @@
                 <th>Name</th>
                 <td>{{ team.name }}</td>
             </tr>
+            {% if team.user|length > 0 %}
+                {% for user in team.user %}
+                    <tr>
+                        <th>Membre {{ loop.index }}</th>
+                        <td>{{ user.firstName }} {{ user.lastName }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <th>Aucun utilisateur associé !</th>
+                </tr>
+            {% endif %}
         </tbody>
     </table>
 

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}¤ First Symfony ~ Editer un utilisateur ¤{% endblock %}
+
+{% block body %}
+    {{ include('header/header.html.twig') }}
+
+    {{ include('user/_form.html.twig', {'button_label': 'Mettre à jour  '}) }}
+
+    <a href="{{ path('user_index') }}">Retour</a>
+
+    {{ include('user/_delete_form.html.twig') }}
+    {{ include('footer/footer.html.twig') }}
+{% endblock %}
