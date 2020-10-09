@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9078d14-3ecd-4456-b8a7-190238fd022a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/firstsymfony/templates/header/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/firstsymfony/templates/header/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firstsymfony/templates/team/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/firstsymfony/templates/team/edit.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +179,7 @@
       <workItem from="1602184329867" duration="435000" />
       <workItem from="1602184884750" duration="346000" />
       <workItem from="1602186073482" duration="237000" />
-      <workItem from="1602188056504" duration="11780000" />
+      <workItem from="1602188056504" duration="12127000" />
     </task>
     <servers />
   </component>

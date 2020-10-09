@@ -17,7 +17,8 @@
                     <th>Membre {{ loop.index }}</th>
                     <td>{{ user.firstName }} {{ user.lastName }}</td>
                     <td>
-                        <a href="/user/{{ user.id }}/edit">Supprimer</a>
+
+                        <a href="{{ path('user_edit', {id: user.id}) }}">Supprimer</a>
                     </td>
                 </tr>
             {% endfor %}
